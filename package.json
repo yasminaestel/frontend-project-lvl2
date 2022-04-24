@@ -26,5 +26,8 @@
     "eslint-plugin-import": "^2.26.0",
     "jest": "^27.5.1",
     "prettier": "^2.6.2"
-  }
+  },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
 }
