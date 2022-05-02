@@ -1,20 +1,22 @@
-import { readFileSync } from 'fs';
-import gendiff from '../src/index';
-import { getFixturePath as getPath } from '../src/data/filePath';
+import genDiff from '../src/index.js';
 
-const testData = {
-  testForDiff: 'filesDiff.txt',
-  file1: 'jsonFile1.json',
-  file2: 'jsonFile2.json',
-  file3: 'yamlFile1.yaml',
-  file4: 'yamlFile2.yml',
-};
+const result = `{
+  - follow: false
+    host: hexlet.io
+  - proxy: 123.234.53.22
+  - timeout: 50
+  + timeout: 20
+  + verbose: true
+}`;
 
-test('gendiffCheck_json_json_1', () => {
-  expect(gendiff(getPath(testData.file1), getPath(testData.file2)))
-    .toEqual(readFileSync(getPath(testData.testForDiff), 'utf-8'));
+test('genDiff JSON', () => {
+  const filepath1 = './__fixtures__/filepath1.json';
+  const filepath2 = './__fixtures__/filepath2.json';
+  expect(genDiff(filepath1, filepath2)).toEqual(result);
 });
 
-test('gendiffCheck_null_json', () => {
-  expect(gendiff(getPath(null), getPath(testData.file2))).toBe(null);
+test('genDiff YAML', () => {
+  const fileYaml1 = './__fixtures__/filepath1.yml';
+  const fileYaml2 = './__fixtures__/filepath2.yml';
+  expect(genDiff(fileYaml1, fileYaml2)).toBe(result);
 });
