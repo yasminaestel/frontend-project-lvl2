@@ -4,3 +4,5 @@ Hexlet tests and linter status:
 
 Gendiff demonstration of JSON files
 [![asciicast](https://asciinema.org/a/in8Np5r73BNH1s2dELPquoglT.svg)](https://asciinema.org/a/in8Np5r73BNH1s2dELPquoglT)
+Gendiff demonstration of YAML files
+[![asciicast](https://asciinema.org/a/0qY2MB6wLUPtnjvkfG6QMtCUM.svg)](https://asciinema.org/a/0qY2MB6wLUPtnjvkfG6QMtCUM)
