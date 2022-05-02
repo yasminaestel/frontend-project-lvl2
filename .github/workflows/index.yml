@@ -1,7 +1,8 @@
+name: index
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       # Клонируем репозиторий
       - uses: actions/checkout@v2
