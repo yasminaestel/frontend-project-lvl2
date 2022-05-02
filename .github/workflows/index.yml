@@ -1,0 +1,18 @@
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Клонируем репозиторий
+      - uses: actions/checkout@v2
+      # Устанавливаем Node.js
+      - uses: actions/setup-node@v1
+      # Ставим зависимости
+      - run: npm install
+      # Запускаем линтер
+      - run: npm run lint
+      # Запускаем тесты
+      # у шагов может быть имя, иногда это помогает отладке
+      # имя выводится на Github при просмотре сборки
+      - name: run tests
+        run: npm test
