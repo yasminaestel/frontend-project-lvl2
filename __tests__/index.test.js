@@ -57,7 +57,7 @@ const result2 = `{
 test('genDiff JSON', () => {
   const filepath1 = './__fixtures__/filepath1.json';
   const filepath2 = './__fixtures__/filepath2.json';
-  expect(genDiff(filepath1, filepath2)).toEqual(result);
+  expect(genDiff(filepath1, filepath2)).toEqual(result2);
 });
 
 test('genDiff YAML', () => {
