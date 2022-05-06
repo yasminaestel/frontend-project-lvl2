@@ -1,3 +1,4 @@
+
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';
@@ -9,17 +10,19 @@ const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const cases = [
-  ['filepath1.json', 'filepath2.json', 'resultjson.txt', 'json'],
-  ['filepath1.yml', 'filepath2.yml', 'resultstylish.txt', 'stylish'],
-  ['filepath1.json', 'filepath2.json', 'resultstylish.txt', 'stylish'],
-  ['filepath1.json', 'filepath2.json', 'resultplain.txt', 'plain'],
+const tests = [
+  ['file1.json', 'file2.json', 'expected_file_stylish.txt', 'stylish'],
+  ['file1.yml', 'file2.yml', 'expected_file_stylish.txt', 'stylish'],
+  ['file1.json', 'file2.json', 'expected_file_plain.txt', 'plain'],
+  ['file1.json', 'file2.json', 'expected_file_json.txt', 'json'],
 ];
 
-test.each(cases)('Compare %s and %s to expect %s in "%s" style', (firstArg, secondArg, expectedResult, format) => {
-  const firstFile = getFixturePath(firstArg);
-  const secondFile = getFixturePath(secondArg);
-  const getResult = readFile(expectedResult);
-  const result = genDiff(firstFile, secondFile, format);
-  expect(result).toEqual(getResult);
+describe('check for correct diff', () => {
+  test.each(tests)('Compare files', (firstArg, secondArg, expectedResult, format) => {
+    const firstFile = getFixturePath(firstArg);
+    const secondFile = getFixturePath(secondArg);
+    const getResult = readFile(expectedResult);
+    const result = genDiff(firstFile, secondFile, format);
+    expect(result).toEqual(getResult);
+  });
 });
