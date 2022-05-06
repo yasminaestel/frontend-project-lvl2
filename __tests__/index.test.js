@@ -1,67 +1,25 @@
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import genDiff from '../src/index.js';
 
-const result = `{
-  - follow: false
-    host: hexlet.io
-  - proxy: 123.234.53.22
-  - timeout: 50
-  + timeout: 20
-  + verbose: true
-}`;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-const result2 = `{
-    common: {
-      + follow: false
-        setting1: Value 1
-      - setting2: 200
-      - setting3: true
-      + setting3: null
-      + setting4: blah blah
-      + setting5: {
-            key5: value5
-        }
-        setting6: {
-            doge: {
-              - wow:
-              + wow: so much
-            }
-            key: value
-          + ops: vops
-        }
-    }
-    group1: {
-      - baz: bas
-      + baz: bars
-        foo: bar
-      - nest: {
-            key: value
-        }
-      + nest: str
-    }
-  - group2: {
-        abc: 12345
-        deep: {
-            id: 45
-        }
-    }
-  + group3: {
-        deep: {
-            id: {
-                number: 45
-            }
-        }
-        fee: 100500
-    }
-}`;
+const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
+const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-test('genDiff JSON', () => {
-  const filepath1 = './__fixtures__/filepath1.json';
-  const filepath2 = './__fixtures__/filepath2.json';
-  expect(genDiff(filepath1, filepath2)).toEqual(result2);
-});
+const cases = [
+  ['filepath1.json', 'filepath2.json', 'resultjson.txt', 'json'],
+  ['filepath1.yml', 'filepath2.yml', 'resultstylish.txt', 'stylish'],
+  ['filepath1.json', 'filepath2.json', 'resultstylish.txt', 'stylish'],
+  ['filepath1.json', 'filepath2.json', 'resultplain.txt', 'plain'],
+];
 
-test('genDiff YAML', () => {
-  const fileYaml1 = './__fixtures__/filepath1.yml';
-  const fileYaml2 = './__fixtures__/filepath2.yml';
-  expect(genDiff(fileYaml1, fileYaml2)).toBe(result);
+test.each(cases)('Compare %s and %s to expect %s in "%s" style', (firstArg, secondArg, expectedResult, format) => {
+  const firstFile = getFixturePath(firstArg);
+  const secondFile = getFixturePath(secondArg);
+  const getResult = readFile(expectedResult);
+  const result = genDiff(firstFile, secondFile, format);
+  expect(result).toEqual(getResult);
 });
