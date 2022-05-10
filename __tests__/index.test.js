@@ -1,4 +1,3 @@
-
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import path, { dirname } from 'path';

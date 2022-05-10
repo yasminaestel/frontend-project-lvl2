@@ -1,10 +1,8 @@
-import _ from 'lodash';
-import { getValidPath } from './data/filePath.js';
+import fs from 'fs';
+import path from 'path';
 import getDataByParcing from './data/parsers.js';
 import format from './formatters/index.js';
 import buildTree from './buildTree.js';
-import fs from 'fs';
-import path from 'path';
 
 const readFile = (filename) => fs.readFileSync(path.resolve(process.cwd(), filename.trim()), 'utf-8');
 const extractFormat = (filename) => path.extname(filename).slice(1);
