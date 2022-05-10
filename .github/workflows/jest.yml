@@ -1,39 +1,39 @@
-name: Jest
+name: github-check
 
-# Run this workflow every time a new commit pushed to your repository
-on: push
+on:
+  push:
+    branches: [ main ]
 
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  make-test:
-    # Name the Job
-    name: Runs tests
-    # Set the type of machine to run on
+  build:
+
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [16.x]
+
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Checkout code
-        uses: actions/checkout@v2
-      
-      # installing dependencies
-      - name: Install Dependencies
-        run: make install
-        # Add environment variables
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install
+        run: |
+          make install
         env:
           CI: true
-
-      # Runs the Linter action
-      - name: Run tests
-        run: make test
-
-      # Publish code coverage on Code Climate
-      # https://github.com/paambaati/codeclimate-action
+      - name: Run Linter
+        run: |
+          make lint
+      - name: Run Tests
+        run: |
+          npm test
       - name: Test & publish code coverage
-        uses: paambaati/codeclimate-action@v2.7.5
+        uses: paambaati/codeclimate-action@v3.0.0
         env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+          CC_TEST_REPORTER_ID: ${{secrets.CODECLIMATE_ID}}
         with:
           coverageCommand: make test-coverage
           debug: true
