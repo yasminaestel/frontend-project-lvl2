@@ -9,3 +9,5 @@ Gendiff demonstration of YAML files
 [![asciicast](https://asciinema.org/a/hzMQKntfXl3G6HM9aAJc320Kd.svg)](https://asciinema.org/a/hzMQKntfXl3G6HM9aAJc320Kd)
 Gendiff demonstration of --format
 [![asciicast](https://asciinema.org/a/nr0pmXBYFFtSmhh9gxPVvq4Yv.svg)](https://asciinema.org/a/nr0pmXBYFFtSmhh9gxPVvq4Yv)
+Gendiff demonstration of output to json
+[![asciicast](https://asciinema.org/a/FbFCwBH1unKGIZPcB4R7LdXRX.svg)](https://asciinema.org/a/FbFCwBH1unKGIZPcB4R7LdXRX)
