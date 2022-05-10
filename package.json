@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "description": "[![Actions Status](https://github.com/yasminaestel/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/yasminaestel/frontend-project-lvl2/actions)",
-  "main": "bin/gendiff.js",
+  "main": "./index.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -33,8 +36,5 @@
     "eslint-plugin-jest": "^26.1.5",
     "jest": "^27.5.1",
     "prettier": "^2.6.2"
-  },
-  "bin": {
-    "gendiff": "bin/gendiff.js"
   }
 }
