@@ -1,3 +1,6 @@
+install: install-deps
+	npx simple-git-hooks
+	
 test:
 	npm test
 
