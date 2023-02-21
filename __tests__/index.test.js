@@ -1,10 +1,12 @@
 import genDiff from '../src/index.js';
-import { readFile } from 'node:fs/promises';
+import fs from 'fs';
+import path from 'node:path';
 
 const fileJson1 = '../__fixtures__/file1.json';
 const fileJson2 = '../__fixtures__ /file1.json';
-const resultJson = '../__fixtures__/resultJson.txt';
+const resultPath = path.resolve('../__fixtures__/resultJson.txt');
+const resultJson = fs.readFileSync(resultPath);
 
 test('genDiffJson', () => {
-  expect(genDiff(fileJson1, fileJson2)).toEqual(readFile(resultJson, { encoding: 'utf8' }));
+  expect(genDiff(fileJson1, fileJson2)).toEqual(resultJson);
 });
