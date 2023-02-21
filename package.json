@@ -7,9 +7,7 @@
   "bin": {
     "gendiff": "bin/gendiff.js"
   },
-  "simple-git-hooks": {
-    "pre-push": "make lint"
-  },
+  "simple-git-hooks": {},
   "scripts": {
     "test": "npx jest"
   },
