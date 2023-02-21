@@ -6,3 +6,5 @@ install:
 	npm ci
 gendiff:
 	node bin/genDiff.js
+public:
+	npm install gendiff --dry-run
