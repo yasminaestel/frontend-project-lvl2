@@ -1,6 +1,7 @@
-import _ from lodash;
+import _ from 'lodash';
 
-const getDiff = (filepath1, filepath2) => {
-  };
+const genDiff = (filepath1, filepath2) => {
+  return '';
+};
 
-export default getDiff;
+export default genDiff;
