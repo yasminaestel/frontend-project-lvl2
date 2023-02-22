@@ -1,8 +1,8 @@
 import genDiff from '../src/index.js';
 import readFile from '../src/readFile.js';
 
-const fileJson1 = await readFile('../__fixtures__/file1.json');
-const fileJson2 = await readFile('../__fixtures__/file1.json');
+const fileJson1 = '../__fixtures__/file1.json';
+const fileJson2 = '../__fixtures__/file2.json';
 
 const resultJson = await readFile('/../__fixtures__/resultJson.txt');
 
