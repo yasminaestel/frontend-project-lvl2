@@ -1,6 +1,3 @@
-import _ from 'lodash';
-
-
 const genDiff = (filepath1, filepath2) => {
   console.log(filepath1, filepath2);
 };
