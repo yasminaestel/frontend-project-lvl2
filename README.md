@@ -11,3 +11,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/cb4a44c30847ac5d361c/maintainability)](https://codeclimate.com/github/yasminaestel/frontend-project-lvl2/maintainability)
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/cb4a44c30847ac5d361c/test_coverage)](https://codeclimate.com/github/yasminaestel/frontend-project-lvl2/test_coverage)
+
+### Flat File Comparison (JSON)
+
+[![asciicast](https://asciinema.org/a/rh4ugtbswXYHcmohNPPp729Oz.svg)](https://asciinema.org/a/rh4ugtbswXYHcmohNPPp729Oz)
