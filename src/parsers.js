@@ -1,5 +1,5 @@
-import readFile from './readFile.js';
 import YAML from 'yaml';
+import readFile from './readFile.js';
 
 const getFile = (nameFile) => {
   const formate = nameFile.split('.').pop();
