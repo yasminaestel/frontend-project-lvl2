@@ -24,7 +24,7 @@ const compareObject = (object1, object2) => {
     }
     return result;
   });
-  return result;
+  return result.sort((x, y) => x.key.localeCompare(y.key));
 };
 
 export default compareObject;
