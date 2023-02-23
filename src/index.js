@@ -1,6 +1,6 @@
 import compareObject from './compareObject.js';
 import formater from './formater.js';
-import getFile from './getFile.js';
+import getFile from './parsers.js';
 
 const genDiff = (filepath1, filepath2) => {
   const file1 = getFile(filepath1);
