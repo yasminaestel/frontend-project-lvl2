@@ -4,9 +4,10 @@ const formater = (diff) => {
       return (`  ${infoObject.key}: ${infoObject.value}`);
     }
     if (infoObject.status === 'bothChange') {
-      const line1 = `- ${infoObject.key}: ${infoObject.value1}`
+      const line1 = `- ${infoObject.key}: ${infoObject.value1}`;
       const line2 = `+ ${infoObject.key}: ${infoObject.value2}`;
-      return (line1 + '\n' + line2);
+      const stringConcatenation = (`${line1}\n${line2}`);
+      return stringConcatenation;
     }
     if (infoObject.status === 'onlyObject1') {
       return (`- ${infoObject.key}: ${infoObject.value}`);
@@ -14,6 +15,7 @@ const formater = (diff) => {
     if (infoObject.status === 'onlyObject2') {
       return (`+ ${infoObject.key}: ${infoObject.value}`);
     }
+    return array;
   });
   const result = ['{', ...array, '}'];
   return result.join('\n');

@@ -9,17 +9,20 @@ const compareObject = (object1, object2) => {
     const value1 = object1[key];
     const value2 = object2[key];
     if (_.has(object1, key) && _.has(object2, key) && _.isEqual(value1, value2)) {
-      return { key: key, value: value1, status: 'bothNoChange' };
+      return { key, value: value1, status: 'bothNoChange' };
     }
     if (_.has(object1, key) && _.has(object2, key) && !(_.isEqual(value1, value2))) {
-      return { key: key, value1: value1, value2: value2, status: 'bothChange' };
+      return {
+        key, value1, value2, status: 'bothChange',
+      };
     }
     if (_.has(object1, key)) {
-      return { key: key, value: value1, status: 'onlyObject1' };
+      return { key, value: value1, status: 'onlyObject1' };
     }
     if (_.has(object2, key)) {
-      return { key: key, value: value2, status: 'onlyObject2' };
+      return { key, value: value2, status: 'onlyObject2' };
     }
+    return result;
   });
   return result;
 };

@@ -2,9 +2,6 @@ import readFile from './readFile.js';
 import compareObject from './compareObject.js';
 import formater from './formater.js';
 
-const filepath1 = '../__fixtures__/file1.json';
-const filepath2 = '../__fixtures__/file2.json';
-
 const genDiff = (filepath1, filepath2) => {
   const file1 = JSON.parse(readFile(filepath1));
   const file2 = JSON.parse(readFile(filepath2));
