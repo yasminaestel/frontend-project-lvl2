@@ -7,7 +7,7 @@ const fileJson2 = '../__fixtures__/file2.json';
 const fileYml1 = '../__fixtures__/file1.yml';
 const fileYaml2 = '../__fixtures__/file2.yaml';
 
-const result = await readFile('/../__fixtures__/result.txt');
+const result = await readFile('/../__fixtures__/resultFlat.txt');
 
 test('genDiffJson', () => {
   expect(genDiff(fileJson1, fileJson2)).toEqual(result);

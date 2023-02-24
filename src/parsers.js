@@ -2,7 +2,7 @@ import YAML from 'yaml';
 import readFile from './readFile.js';
 
 const getFile = (nameFile) => {
-  const formate = nameFile.split('.').pop();
+  const formate = nameFile.split('.').pop().toLowerCase();
   switch (formate) {
     case 'json':
       return JSON.parse(readFile(nameFile));
