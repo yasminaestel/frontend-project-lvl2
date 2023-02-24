@@ -1,17 +1,26 @@
+import { fileURLToPath } from 'url';
+import path, { dirname } from 'path';
 import genDiff from '../src/index.js';
 import readFile from '../src/readFile.js';
 
-const fileJson1 = '../__fixtures__/file1.json';
-const fileJson2 = '../__fixtures__/file2.json';
+const getPath = (fileName) => {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+  const getFixturePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
+  return getFixturePath(fileName);
+}
 
-const fileYml1 = '../__fixtures__/file1.yml';
-const fileYaml2 = '../__fixtures__/file2.yaml';
+const fileJson1 = 'file1.json';
+const fileJson2 = 'file2.json';
 
-const result = await readFile('/../__fixtures__/resultFlat.txt');
+const fileYml1 = 'file1.yml';
+const fileYaml2 = 'file2.yaml';
+
+const result = readFile(getPath('resultFlat.txt'));
 
 test('genDiffJson', () => {
-  expect(genDiff(fileJson1, fileJson2)).toEqual(result);
+  expect(genDiff(getPath(fileJson1), getPath(fileJson2))).toEqual(result);
 });
 test('genDiffYml', () => {
-  expect(genDiff(fileYml1, fileYaml2)).toEqual(result);
+  expect(genDiff(getPath(fileYml1), getPath(fileYaml2))).toEqual(result);
 });
