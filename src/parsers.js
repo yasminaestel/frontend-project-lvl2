@@ -1,7 +1,7 @@
 import YAML from 'yaml';
 import readFile from './readFile.js';
 
-const getFile = (nameFile) => {
+const parsers = (nameFile) => {
   const formate = nameFile.split('.').pop().toLowerCase();
   switch (formate) {
     case 'json':
@@ -15,4 +15,4 @@ const getFile = (nameFile) => {
   }
 };
 
-export default getFile;
+export default parsers;
