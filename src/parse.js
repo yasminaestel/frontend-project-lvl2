@@ -9,7 +9,7 @@ const parse = (extention, dataFile) => {
     case 'yml':
       return YAML.parse(dataFile);
     default:
-      return ('Unknown file format');
+      throw new Error('unknown extension');
   }
 };
 

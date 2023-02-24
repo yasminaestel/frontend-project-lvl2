@@ -5,6 +5,8 @@ const compareObject = (object1, object2) => {
   const keysObject2 = Object.keys(object2);
   const keys = _.uniq([...keysObject1, ...keysObject2]);
 
+  console.log(keys);
+
   const result = keys.map((key) => {
     const value1 = object1[key];
     const value2 = object2[key];
