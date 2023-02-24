@@ -6,9 +6,9 @@ import readFile from '../src/readFile.js';
 const getPath = (fileName) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
-  const getFixturePath = (fileName) => path.join(__dirname, '..', '__fixtures__', fileName);
-  return getFixturePath(fileName);
-}
+  const getFixturePath = path.join(__dirname, '..', '__fixtures__', fileName);
+  return getFixturePath;
+};
 
 const fileJson1 = 'file1.json';
 const fileJson2 = 'file2.json';
