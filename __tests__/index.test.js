@@ -10,17 +10,20 @@ const getPath = (fileName) => {
   return getFixturePath;
 };
 
-const fileJson1 = 'file1.json';
-const fileJson2 = 'file2.json';
-
-const fileYml1 = 'file1.yml';
-const fileYaml2 = 'file2.yaml';
+const fileJson1 = getPath('file1.json');
+const fileJson2 = getPath('file2.json');
+const fileYml1 = getPath('file1.yml');
+const fileYaml2 = getPath('file2.yaml');
+const treeJson1 = getPath('file3.json');
+const treeJson2 = getPath('file4.json');
 
 const result = readFile(getPath('resultFlat.txt'));
+const resultTree = readFile(getPath('resultTree.txt'));
 
-test('genDiffJson', () => {
-  expect(genDiff(getPath(fileJson1), getPath(fileJson2))).toEqual(result);
+test('genDiffFlat', () => {
+  expect(genDiff(fileJson1, fileJson2)).toEqual(result);
+  expect(genDiff(fileYml1, fileYaml2)).toEqual(result);
 });
-test('genDiffYml', () => {
-  expect(genDiff(getPath(fileYml1), getPath(fileYaml2))).toEqual(result);
+test('genDiffTree', () => {
+  expect(genDiff(treeJson1, treeJson2)).toEqual(resultTree);
 });
