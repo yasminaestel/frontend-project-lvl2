@@ -6,15 +6,11 @@ import readFile from './readFile.js';
 const genDiff = (filepath1, filepath2) => {
   const dataFile1 = readFile(filepath1);
   const dataFile2 = readFile(filepath2);
-  //console.log(dataFile1, dataFile2);
   const extentionFile1 = filepath1.split('.').pop().toLowerCase();
   const extentionFile2 = filepath2.split('.').pop().toLowerCase();
-  //console.log(extentionFile1, extentionFile2);
   const parsFile1 = parse(extentionFile1, dataFile1);
   const parsFile2 = parse(extentionFile2, dataFile2);
-  //console.log(parsFile1, parsFile2);
   const diff = compareObject(parsFile1, parsFile2);
-  //console.log(diff);
   const stringResult = formater(diff);
   return stringResult;
 };

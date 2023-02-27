@@ -1,5 +1,10 @@
+import _ from 'lodash';
+
 const formater = (diff) => {
   const array = diff.map((infoObject) => {
+    if (infoObject.status === 'hasValueObject') {
+      return (formater(infoObject.value));
+    }
     if (infoObject.status === 'bothNoChange') {
       return (`    ${infoObject.key}: ${infoObject.value}`);
     }
@@ -15,7 +20,7 @@ const formater = (diff) => {
     if (infoObject.status === 'onlyObject2') {
       return (`  + ${infoObject.key}: ${infoObject.value}`);
     }
-    return array;
+    return ('error');
   });
   const result = ['{', ...array, '}'];
   return result.join('\n');
