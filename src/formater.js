@@ -1,9 +1,11 @@
 import _ from 'lodash';
+import stringify from './stringify.js';
 
 const formater = (diff) => {
   const array = diff.map((infoObject) => {
     if (infoObject.status === 'hasValueObject') {
-      return (formater(infoObject.value));
+      const value = formater(infoObject.value);
+      return (`${infoObject.key}: ${value}`);
     }
     if (infoObject.status === 'bothNoChange') {
       return (`    ${infoObject.key}: ${infoObject.value}`);
@@ -23,7 +25,7 @@ const formater = (diff) => {
     return ('error');
   });
   const result = ['{', ...array, '}'];
-  return result.join('\n');
+  return result;
 };
 
 export default formater;
