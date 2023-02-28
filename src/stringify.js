@@ -13,8 +13,8 @@ const stringify = (value, level) => {
     }
     const entries = Object.entries(data);
     const array = entries.map(([key, meaning]) => (`${spaces(depth)}${key}: ${iter(meaning, depth + 1)}`));
-    const res = ['{', ...array, `${bracketSpaces(level)}}`];
-    result = res.join('\n');
+    const countSpec = bracketSpaces(depth);
+    result = ['{', ...array, `${countSpec}}`].join('\n');
     return result;
   };
   return iter(value, level);
