@@ -1,9 +1,9 @@
 import compareObject from './compareObject.js';
-import formater from './stylish.js';
 import parse from './parse.js';
 import readFile from './readFile.js';
+import stylish from './stylish.js';
 
-const genDiff = (filepath1, filepath2) => {
+const genDiff = (filepath1, filepath2, formater = stylish) => {
   const dataFile1 = readFile(filepath1);
   const dataFile2 = readFile(filepath2);
   const extentionFile1 = filepath1.split('.').pop().toLowerCase();

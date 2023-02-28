@@ -16,6 +16,9 @@
 
 [![asciicast](https://asciinema.org/a/rh4ugtbswXYHcmohNPPp729Oz.svg)](https://asciinema.org/a/rh4ugtbswXYHcmohNPPp729Oz)
 
-### Flat File Comparison (Yaml and Yaml)
+### Flat File Comparison (Yaml and Yml)
 
 [![asciicast](https://asciinema.org/a/Ejv9IO8UcMhZPGromphS88Ajo.svg)](https://asciinema.org/a/Ejv9IO8UcMhZPGromphS88Ajo)
+
+### Recursive comparison (Json and Yaml/Yml)
+[![asciicast](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT.svg)](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT)

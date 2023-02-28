@@ -11,10 +11,10 @@ const symbol = {
   onlyObject2: '+ ',
 };
 
-const formater = (diff, level = 1) => {
+const stylish = (diff, level = 1) => {
   const array = diff.map((infoObject) => {
     if (infoObject.status === 'hasValueObject') {
-      const value = formater(infoObject.value, level + 1);
+      const value = stylish(infoObject.value, level + 1);
       return (`${spaces(level, 2)}${symbol.bothNoChange}${infoObject.key}: ${stringify(value, level + 1)}`);
     }
     const value = stringify(infoObject.value, level + 1);
@@ -39,4 +39,4 @@ const formater = (diff, level = 1) => {
   return result;
 };
 
-export default formater;
+export default stylish;
