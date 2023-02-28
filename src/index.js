@@ -1,5 +1,5 @@
 import compareObject from './compareObject.js';
-import formater from './formater.js';
+import formater from './stylish.js';
 import parse from './parse.js';
 import readFile from './readFile.js';
 
