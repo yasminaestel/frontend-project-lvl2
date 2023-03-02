@@ -23,5 +23,8 @@
 ### Recursive comparison (Json and Yaml/Yml)
 [![asciicast](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT.svg)](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT)
 
-## Flat format
+### Flat format
 [![asciicast](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx.svg)](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx)
+
+### Output to json
+[![asciicast](https://asciinema.org/a/pxV1DeTZ7BDJTil9IwjLtKoac.svg)](https://asciinema.org/a/pxV1DeTZ7BDJTil9IwjLtKoac)
