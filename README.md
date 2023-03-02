@@ -24,4 +24,4 @@
 [![asciicast](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT.svg)](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT)
 
 ## Flat format
-https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx
+[![asciicast](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx.svg)](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx)
