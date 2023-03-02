@@ -1,4 +1,4 @@
-const stringifyToPlain = (value) => {
+const stringifyForPlain = (value) => {
   if (typeof value === 'object' && value !== null) {
     return ('[complex value]');
   } if (typeof value === 'string') {
@@ -7,4 +7,4 @@ const stringifyToPlain = (value) => {
   return value;
 };
 
-export default stringifyToPlain;
+export default stringifyForPlain;

@@ -1,6 +1,6 @@
 import { getSpacesStringify, getBracketSpaces } from '../getSpaces.js';
 
-const stringify = (value, level) => {
+const stringifyForStylish = (value, level) => {
   const iter = (data, depth) => {
     let result = '';
     if (typeof data !== 'object' || data === null) {
@@ -16,4 +16,4 @@ const stringify = (value, level) => {
   return iter(value, level);
 };
 
-export default stringify;
+export default stringifyForStylish;

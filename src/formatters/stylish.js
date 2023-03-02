@@ -1,4 +1,4 @@
-import stringify from '../stringify/stringifyToStylish.js';
+import stringify from '../stringify/stringifyForStylish.js';
 import { getSpacesStylish, getBracketSpaces } from '../getSpaces.js';
 
 const symbol = {

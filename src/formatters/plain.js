@@ -1,4 +1,4 @@
-import stringifyToPlain from '../stringify/stringifyToPlain.js';
+import stringify from '../stringify/stringifyForPlain.js';
 
 const plain = (diff) => {
   const iter = (node, ancestry = '') => {
@@ -11,13 +11,13 @@ const plain = (diff) => {
         return null;
       }
       if (infoObject.status === 'bothChange') {
-        return `Property '${newAncesty}' was updated. From ${stringifyToPlain(infoObject.value1)} to ${stringifyToPlain(infoObject.value2)}`;
+        return `Property '${newAncesty}' was updated. From ${stringify(infoObject.value1)} to ${stringify(infoObject.value2)}`;
       }
       if (infoObject.status === 'onlyObject1') {
         return `Property '${newAncesty}' was removed`;
       }
       if (infoObject.status === 'onlyObject2') {
-        return `Property '${newAncesty}' was added with value: ${stringifyToPlain(infoObject.value)}`;
+        return `Property '${newAncesty}' was added with value: ${stringify(infoObject.value)}`;
       }
       return ('error');
     });
