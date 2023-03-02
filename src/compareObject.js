@@ -3,13 +3,12 @@ import _ from 'lodash';
 const compareObject = (object1, object2) => {
   const keysObject1 = Object.keys(object1);
   const keysObject2 = Object.keys(object2);
-  const keys = _.uniq([...keysObject1, ...keysObject2]);
-  const result = keys.flatMap((key) => {
-    if (_.isObject(object1[key]) && _.isObject(object2[key])) {
-      return { key, value: compareObject(object1[key], object2[key]), status: 'hasValueObject' };
-    }
+  const result = _.uniq([...keysObject1, ...keysObject2]).flatMap((key) => {
     const value1 = object1[key];
     const value2 = object2[key];
+    if (_.isObject(value1) && _.isObject(value2)) {
+      return { key, value: compareObject(value1, value2), status: 'hasValueObject' };
+    }
     if (_.has(object1, key) && _.has(object2, key) && _.isEqual(value1, value2)) {
       return { key, value: value1, status: 'bothNoChange' };
     }
