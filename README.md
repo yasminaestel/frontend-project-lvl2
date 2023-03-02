@@ -4,7 +4,7 @@
 
 ### GitHub Action
 
-[![GitHub Actions Demo](https://github.com/yasminaestel/frontend-project-lvl2/actions/workflows/github-actions-demo.yml/badge.svg)](https://github.com/yasminaestel/frontend-project-lvl2/actions/workflows/github-actions-demo.yml)
+[![GitHub Actions Demo](https://github.com/yasminaestel/frontend-project-lvl2/actions/workflows/learn-github-actions.yml/badge.svg)](https://github.com/yasminaestel/frontend-project-lvl2/actions/workflows/learn-github-actions.yml)
 
 ### CodeClimate
 
