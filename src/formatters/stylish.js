@@ -9,7 +9,6 @@ const symbol = {
 
 const stylish = (diff, level = 1) => {
   const array = diff.map((infoObject) => {
-    console.log(infoObject);
     if (infoObject.status === 'hasValueObject') {
       const value = stylish(infoObject.value, level + 1);
       return (`${getSpacesStylish(level, 2)}${symbol.bothNoChange}${infoObject.key}: ${stringify(value, level + 1)}`);
