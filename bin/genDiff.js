@@ -1,20 +1,18 @@
 #!/usr/bin/env node
-
-import { Command } from 'commander';
-import genDiff from '../src/index.js';
+import { Command, Option } from 'commander';
+import gendiff from '../src/index.js';
 
 const program = new Command();
 
 program
-  .description('Compares two configuration files and shows a difference.')
-  .version('0.0.1')
+  .name('gendiff')
+  .description('Compares two configuration files and shows a difference. Supports json, yaml, yml formats')
+  .version('1.0.0', '-v, --vers', 'output the current version')
   .arguments('<filepath1> <filepath2>')
-  .option('-f, --format <type>', 'output format', 'stylish')
-  .action(
-    (filepath1, filepath2) => {
-      const result = genDiff(filepath1, filepath2, program.opts().format);
-      console.log(result);
-    },
-  );
+  .addOption(new Option('-f, --format <type>', 'output format')
+    .choices(['stylish', 'plain', 'json']).default('stylish'))
+  .action((filepath1, filepath2, option) => {
+    console.log(gendiff(filepath1, filepath2, option.format));
+  });
 
-program.parse(process.argv);
+program.parse();
