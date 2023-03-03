@@ -6,8 +6,8 @@ import getDiffInForm from './formatters/index.js';
 const genDiff = (filepath1, filepath2, formatName = 'stylish') => {
   const dataFile1 = readFile(filepath1);
   const dataFile2 = readFile(filepath2);
-  const extentionFile1 = filepath1.split('.').reverse()[0];
-  const extentionFile2 = filepath2.split('.').reverse()[0];
+  const extentionFile1 = filepath1.slice(filepath1.lastIndexOf('.') + 1);
+  const extentionFile2 = filepath2.slice(filepath2.lastIndexOf('.') + 1);
   const parsedFile1 = parse(extentionFile1, dataFile1);
   const parsedFile2 = parse(extentionFile2, dataFile2);
   const diff = compareObject(parsedFile1, parsedFile2);
