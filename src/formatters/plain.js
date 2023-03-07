@@ -5,16 +5,16 @@ const formatDiff = (node, ancestry = '') => node.flatMap((infoObject) => {
   if (infoObject.status === 'hasValueObject') {
     return formatDiff(infoObject.value, newAncesty);
   }
-  if (infoObject.status === 'bothNoChange') {
+  if (infoObject.status === 'unchanged') {
     return null;
   }
-  if (infoObject.status === 'bothChange') {
+  if (infoObject.status === 'changed') {
     return `Property '${newAncesty}' was updated. From ${stringify(infoObject.value1)} to ${stringify(infoObject.value2)}`;
   }
-  if (infoObject.status === 'onlyObject1') {
+  if (infoObject.status === 'deleted') {
     return `Property '${newAncesty}' was removed`;
   }
-  if (infoObject.status === 'onlyObject2') {
+  if (infoObject.status === 'added') {
     return `Property '${newAncesty}' was added with value: ${stringify(infoObject.value)}`;
   }
   throw new Error('Unknown type node');

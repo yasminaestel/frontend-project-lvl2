@@ -2,9 +2,9 @@ import stringify from '../stringify/stringifyForStylish.js';
 import { getSpacesStylish, getBracketSpaces } from '../getSpaces.js';
 
 const symbol = {
-  bothNoChange: '  ',
-  onlyObject1: '- ',
-  onlyObject2: '+ ',
+  unchanged: '  ',
+  deleted: '- ',
+  added: '+ ',
 };
 
 const stylish = (diff, level = 1) => {
@@ -12,22 +12,22 @@ const stylish = (diff, level = 1) => {
     const buildLine = (value, status) => `${getSpacesStylish(level, 2)}${symbol[status]}${infoObject.key}: ${stringify(value, level + 1)}`;
     if (infoObject.status === 'hasValueObject') {
       const value = stylish(infoObject.value, level + 1);
-      return buildLine(value, 'bothNoChange');
+      return buildLine(value, 'unchanged');
     }
-    if (infoObject.status === 'bothNoChange') {
-      return buildLine(infoObject.value, 'bothNoChange');
+    if (infoObject.status === 'unchanged') {
+      return buildLine(infoObject.value, 'unchanged');
     }
-    if (infoObject.status === 'bothChange') {
-      const line1 = buildLine(infoObject.value1, 'onlyObject1');
-      const line2 = buildLine(infoObject.value2, 'onlyObject2');
+    if (infoObject.status === 'changed') {
+      const line1 = buildLine(infoObject.value1, 'deleted');
+      const line2 = buildLine(infoObject.value2, 'added');
       const stringConcatenation = (`${line1}\n${line2}`);
       return stringConcatenation;
     }
-    if (infoObject.status === 'onlyObject1') {
-      return buildLine(infoObject.value, 'onlyObject1');
+    if (infoObject.status === 'deleted') {
+      return buildLine(infoObject.value, 'deleted');
     }
-    if (infoObject.status === 'onlyObject2') {
-      return buildLine(infoObject.value, 'onlyObject2');
+    if (infoObject.status === 'added') {
+      return buildLine(infoObject.value, 'added');
     }
     throw new Error('Unknown status');
   });

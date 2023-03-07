@@ -15,22 +15,22 @@ const compareObject = (object1, object2) => {
     }
     if (_.has(object1, key) && _.has(object2, key) && _.isEqual(value1, value2)) {
       return {
-        key, value: value1, status: 'bothNoChange',
+        key, value: value1, status: 'unchanged',
       };
     }
     if (_.has(object1, key) && _.has(object2, key) && !(_.isEqual(value1, value2))) {
       return {
-        key, value1, value2, status: 'bothChange',
+        key, value1, value2, status: 'changed',
       };
     }
     if (_.has(object1, key)) {
       return {
-        key, value: value1, status: 'onlyObject1',
+        key, value: value1, status: 'deleted',
       };
     }
     if (_.has(object2, key)) {
       return {
-        key, value: value2, status: 'onlyObject2',
+        key, value: value2, status: 'added',
       };
     }
     throw new Error('Unknown status');
