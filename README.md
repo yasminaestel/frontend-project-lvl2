@@ -20,11 +20,11 @@
 
 [![asciicast](https://asciinema.org/a/Ejv9IO8UcMhZPGromphS88Ajo.svg)](https://asciinema.org/a/Ejv9IO8UcMhZPGromphS88Ajo)
 
-### Recursive comparison (Json and Yaml/Yml)
+### Recursive comparison (JSON and Yaml/Yml)
 [![asciicast](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT.svg)](https://asciinema.org/a/AvcTIcDNMNzU9k6xJHpluR1sT)
 
 ### Flat format
 [![asciicast](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx.svg)](https://asciinema.org/a/cLjfwrm1zkDjtDqBSmSLM8vNx)
 
-### Output to json
+### Output to JSON
 [![asciicast](https://asciinema.org/a/pxV1DeTZ7BDJTil9IwjLtKoac.svg)](https://asciinema.org/a/pxV1DeTZ7BDJTil9IwjLtKoac)
