@@ -18,3 +18,7 @@ test('genDiffPlain', () => {
   expect(genDiff(getPath('file3.json'), getPath('file4.json'), 'plain')).toEqual(readFile(getPath('resultPlain.txt')));
   expect(genDiff(getPath('file3.yml'), getPath('file4.yaml'), 'plain')).toEqual(readFile(getPath('resultPlain.txt')));
 });
+test('genDiffJson', () => {
+  expect(genDiff(getPath('file3.json'), getPath('file4.json'), 'json')).toEqual(readFile(getPath('resultJson.txt')));
+  expect(genDiff(getPath('file3.yml'), getPath('file4.yaml'), 'json')).toEqual(readFile(getPath('resultJson.txt')));
+});
